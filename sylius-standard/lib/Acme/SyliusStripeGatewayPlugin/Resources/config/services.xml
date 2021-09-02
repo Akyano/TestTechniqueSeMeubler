@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="app.sylius__payment" class="Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder">
+            <argument>Acme\SyliusStripeGatewayPlugin\Payum\SyliusStripePaymentGatewayFactory</argument>
+            <tag name="payum.gateway_factory_builder" factory="sylius_stripe_payment" />
+        </service>
+        <service id="Acme\SyliusStripeGatewayPlugin\Form\Type\SyliusStripeGatewayConfigurationType">
+            <tag name="sylius.gateway_configuration_type" type="sylius_stripe_payment" label="Sylius Stripe Payment" />
+            <tag name="form.type" />
+        </service>
+        <service id="Acme\SyliusStripeGatewayPlugin\Payum\Action\CaptureAction" public="true">
+            <argument type="service" id="sylius.http_client" />
+            <tag name="payum.action" factory="sylius_stripe_payment" alias="payum.action.capture" />
+        </service>
+    </services>
+</container>
