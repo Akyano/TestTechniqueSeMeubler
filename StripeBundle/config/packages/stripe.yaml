@@ -1,0 +1,7 @@
+stripe:
+    public_key: "pk_test_51JSwVtDzNKOtvwb5eeghZPyRivhIk4IyrObEvvaGRUa7KnAV2kBKFNnrTeHPRO8Y0cmZyybJ170cbQIG1uM3jk4r004orTdauB"
+    secret_key: "sk_test_51JSwVtDzNKOtvwb5BC4QeeEZ6V95KEHA2EBrSz306ATOBXgeyLEeSjtMSLE3cFunaNDVJgUfQn9BxeacFSBJbPom00x0MgbsdK"
+    domain: "http://127.0.0.1:8000"
+    currency: "EUR"
+    success_url: "/success"
+    cancel_url: "/cancel"

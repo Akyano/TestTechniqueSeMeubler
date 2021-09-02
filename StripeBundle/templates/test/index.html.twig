@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block stylesheets %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+{% endblock %}
+{% block javascripts %}
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+{% block body %}
+<form action="/stripe/create-session" class="form" method="POST">
+    <input type="text" name="cart[0][product_name]" value="Product 1"  />
+    <input type="text" name="cart[0][product_picture]" value="https://st2.depositphotos.com/3759967/5593/i/600/depositphotos_55936567-stock-photo-swirling-frosty-multi-colored-fractal.jpg" />
+    <input type="text" name="cart[0][unit_amount]" value="4000" />
+    <input type="text" name="cart[0][quantity]" value="1" />
+    <input type="text" name="cart[1][product_name]" value="Product 2" />
+    <input type="text" name="cart[1][product_picture]" value="https://st2.depositphotos.com/3759967/5593/i/600/depositphotos_55936567-stock-photo-swirling-frosty-multi-colored-fractal.jpg" />
+    <input type="text" name="cart[1][unit_amount]" value="2000" />
+    <input type="text" name="cart[1][quantity]" value="3" />
+    <button type="submit" class="btn btn-primary" id="checkout-button">Checkout</button>
+</form>
+{% endblock %}

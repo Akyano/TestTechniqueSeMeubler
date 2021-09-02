@@ -3,7 +3,7 @@
 
 ![https://i.gyazo.com/10042a2d53f1b8dc77a29b65c302e5a0.png](https://i.gyazo.com/10042a2d53f1b8dc77a29b65c302e5a0.png)
 
-https://gyazo.com/f0e18ac1ad6da4ffef2125584d09bff4
+
 #Partie 1:
   Erreur survenur impossible d'en trouver la source :
     - Ne trouve pas la classe Acme\SyliusStripeGatewayPlugin\Payum\SyliusStripePaymentGatewayFactory dans son namespace malgré son ajout dans lautoload
@@ -18,7 +18,7 @@ https://gyazo.com/f0e18ac1ad6da4ffef2125584d09bff4
 
 pour utiliser le puble veuiller update la config avec vos clef API dans (./bundle/config/packages/stripe.yaml)(les clef se trouvant actulement dans le fichier ont était changé) laisser le reste tel quel pour juste essayer le bundle.
 
-le code du bundle se trouve dans le dossier .bundle/lib/Acme
+le code du bundle se trouve dans le dossier ./StripeBundle/lib/Acme
 
 si vous copier se code ailleur veuiller creer le fichier config et inclure le bundle dans ./bundle/config/bundles.php de la maniere suivante: 
   Acme\StripeBundle\StripeBundle::class => ['all' => true],

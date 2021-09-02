@@ -1,0 +1,15 @@
+services:
+    Acme\StripeBundle\Controller\:
+        resource: '../../Controller'
+        tags: [ 'controller.service_arguments' ]
+        arguments: 
+            - { 
+                publicKey: "%acme_stripe.public_key%" ,
+                secretKey: "%acme_stripe.secret_key%" ,
+                domain : "%acme_stripe.domain%",
+                currency : "%acme_stripe.currency%",
+                success_url : "%acme_stripe.success_url%",
+                cancel_url : "%acme_stripe.cancel_url%"
+            }
+        calls:
+            - {method: setContainer , arguments: [ '@service_container' ]}
